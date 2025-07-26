@@ -114,7 +114,7 @@ class TicketSerializer(serializers.ModelSerializer):
         Ticket.validate_ticket(
             attrs["row"],
             attrs["seat"],
-            attrs["performance"].cinema_hall,
+            attrs["performance"].theatre_hall,
             ValidationError,
         )
         return data
@@ -145,7 +145,7 @@ class PerformanceDetailSerializer(PerformanceSerializer):
 
 
 class ReservationSerializer(serializers.ModelSerializer):
-    tickets = TicketSerializer(many=True, read_only=True, allow_empty=True)
+    tickets = TicketSerializer(many=True, allow_empty=True)
 
     class Meta:
         model = Reservation
@@ -153,7 +153,7 @@ class ReservationSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         with transaction.atomic():
-            tickets_data = validated_data.pop("tickets")
+            tickets_data = validated_data.pop("tickets", [])
             order = Reservation.objects.create(**validated_data)
             for ticket_data in tickets_data:
                 Ticket.objects.create(order=order, **ticket_data)
