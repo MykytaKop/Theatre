@@ -12,3 +12,4 @@ Pillow==11.3.0
 drf-spectacular
 django-debug-toolbar
 djangorestframework-simplejwt
+python-dotenv
