@@ -1,0 +1,14 @@
+black==25.1.0
+Django==5.2.4
+django-rest-framework==0.1.0
+djangorestframework==3.16.0
+asgiref==3.8.1
+pytz==2025.2
+sqlparse==0.5.3
+tzdata==2025.2
+psycopg==3.1.12
+psycopg-binary==3.1.12
+Pillow==11.3.0
+drf-spectacular
+django-debug-toolbar
+djangorestframework-simplejwt
