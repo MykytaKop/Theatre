@@ -25,7 +25,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - my_bd:$PGDATA
+      - my_bd:$PG-DATA
 
 volumes:
   my_bd:
