@@ -46,4 +46,3 @@ docker-compose up
 - Creating theatre halls
 - Adding performances
 - Filtering plays and performances
-
